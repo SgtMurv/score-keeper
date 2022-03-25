@@ -1,4 +1,15 @@
-# sveltekit
+# Cheese on Wheels
+A simple mobile game where your car passenger can keep score when playing cheese on wheels on the road.
+
+# How to play?
+1. When you see a yellow car shout: "Cheese on Wheels!".
+
+2. Then you get a point.
+
+3. Repeat steps 1 & 2 until the journey is over or you get bored.
+
+
+# SvelteKit Commands
 
 This repo contains code for a SvelteKit application generated using the [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte) package.
 
