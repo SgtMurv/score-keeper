@@ -12,7 +12,6 @@
 
 <style>
     h1 {
-        font-family: 'Courier New', Courier, monospace;
         text-align: center;
         font-weight: 600;
         font-size: 2.5em;

@@ -61,7 +61,6 @@
 
     .player-name {
         font-size: 2em;
-        font-family: 'Courier New', Courier, monospace;
     }
 
     .counter {
