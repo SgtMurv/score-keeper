@@ -1,12 +1,12 @@
 <script>
-    import Counter from '../lib/counter.svelte';
+    import PlayerTile from '../lib/playerTile.svelte';
 </script>
 
 <div class="home-wrapper">
     <h1>Cheese on Wheels</h1>
     <div>
-        <Counter playerName="Player 1" />
-        <Counter playerName="Player 2" />
+        <PlayerTile playerName="Player 1" />
+        <PlayerTile playerName="Player 2" />
     </div>
 </div>
 
