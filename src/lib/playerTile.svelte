@@ -1,23 +1,35 @@
 <script>
-  import { spring } from 'svelte/motion';
+  import { onMount } from 'svelte';
+
   export let playerName = '';
+  export let playerId = 0;
   let count = 0;
+  let currentCountKey = `current-count-${playerId}`;
 
-  const displayed_count = spring();
-  $: displayed_count.set(count);
-  $: offset = modulo($displayed_count, 1);
+  const INCREMENT = 1;
+  const DECREMENT = -1;
 
-  function modulo(n, m) {
-    // handle negative numbers
-    return ((n % m) + m) % m;
+  function modifyCount(modifier) {
+    if (modifier == DECREMENT && count == 0) return;
+
+    count += modifier;
+    localStorage.setItem(currentCountKey, count);
   }
+
+  onMount(() => {
+    let currentCountFromLocalStorage = localStorage.getItem(currentCountKey);
+
+    if (currentCountFromLocalStorage) {
+      count = currentCountFromLocalStorage;
+    }
+  });
 </script>
 
 <div class="player-tile">
   <p class="player-name">{playerName}</p>
   <div class="counter">
     <button
-      on:click={() => (count -= 1)}
+      on:click={() => modifyCount(DECREMENT)}
       aria-label="Decrease the counter by one"
     >
       <svg aria-hidden="true" viewBox="0 0 1 1">
@@ -26,19 +38,13 @@
     </button>
 
     <div class="counter-viewport">
-      <div
-        class="counter-digits"
-        style="transform: translate(0, {100 * offset}%)"
-      >
-        <strong class="hidden" aria-hidden="true"
-          >{Math.floor($displayed_count + 1)}</strong
-        >
-        <strong>{Math.floor($displayed_count)}</strong>
+      <div class="counter-digits">
+        <strong>{count}</strong>
       </div>
     </div>
 
     <button
-      on:click={() => (count += 1)}
+      on:click={() => modifyCount(INCREMENT)}
       aria-label="Increase the counter by one"
     >
       <svg aria-hidden="true" viewBox="0 0 1 1">
@@ -123,10 +129,5 @@
     position: absolute;
     width: 100%;
     height: 100%;
-  }
-
-  .hidden {
-    top: -100%;
-    user-select: none;
   }
 </style>

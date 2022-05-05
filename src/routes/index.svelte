@@ -1,14 +1,17 @@
 <script>
   import PlayerTile from '../lib/playerTile.svelte';
 
-  let players = [{ name: 'Player 1' }, { name: 'Player 2' }];
+  let players = [
+    { name: 'Player 1', id: 0 },
+    { name: 'Player 2', id: 1 },
+  ];
 </script>
 
 <div class="home-wrapper">
   <h1>Cheese on Wheels</h1>
   <div class="playerTiles">
     {#each players as player}
-      <PlayerTile playerName={player.name} />
+      <PlayerTile playerName={player.name} playerId={player.id} />
     {/each}
   </div>
 </div>
