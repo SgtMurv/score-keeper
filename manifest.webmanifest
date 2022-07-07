@@ -1,0 +1,16 @@
+{
+    "background_color": "mint",
+    "description": "A way for you to keep score when playing chesse on wheels with you fellow car passengers",
+    "display": "fullscreen",
+    "icons": [
+      {
+        "src": "icon/fox-icon.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      }
+    ],
+    "name": "Cheese on Wheels",
+    "short_name": "Cheeses",
+    "start_url": "/"
+  }
+  

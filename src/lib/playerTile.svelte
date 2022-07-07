@@ -25,109 +25,32 @@
   });
 </script>
 
-<div class="player-tile">
-  <p class="player-name">{playerName}</p>
-  <div class="counter">
-    <button
-      on:click={() => modifyCount(DECREMENT)}
-      aria-label="Decrease the counter by one"
-    >
-      <svg aria-hidden="true" viewBox="0 0 1 1">
-        <path d="M0,0.5 L1,0.5" />
-      </svg>
-    </button>
-
-    <div class="counter-viewport">
-      <div class="counter-digits">
-        <strong>{count}</strong>
-      </div>
-    </div>
-
-    <button
-      on:click={() => modifyCount(INCREMENT)}
-      aria-label="Increase the counter by one"
-    >
-      <svg aria-hidden="true" viewBox="0 0 1 1">
-        <path d="M0,0.5 L1,0.5 M0.5,0 L0.5,1" />
-      </svg>
-    </button>
+<!-- We have {playerName} {count} to display... -->
+<div>
+  <div class="player-name-label">
+    <p>{playerName}</p>
+  </div>
+  <div class="counter-wrapper">
+    <p>Put the counter in here...</p>
   </div>
 </div>
 
 <style>
-  .player-tile {
-    background: rgb(238, 238, 238);
-    display: flex;
-    flex-direction: column;
-    gap: 10%;
-    justify-content: center;
-    align-items: center;
-    padding: 5%;
+  .player-name-label {
+    font-weight: 600;
+    font-size: 28px;
+    padding: 5px;
+    background: #ffeba3;
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    width: fit-content;
   }
-
-  .player-name {
-    font-size: 2em;
-    margin: 0;
+  .player-name-label p {
+    margin: 0px;
+    display: inline-block;
   }
-
-  .counter {
-    display: flex;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    margin: 1rem 0;
-    justify-content: center;
-  }
-
-  .counter button {
-    width: 2em;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 0;
-    background-color: transparent;
-    color: var(--text-color);
-    font-size: 2rem;
-  }
-
-  .counter button:hover {
-    background-color: var(--secondary-color);
-  }
-
-  svg {
-    width: 25%;
-    height: 25%;
-  }
-
-  path {
-    vector-effect: non-scaling-stroke;
-    stroke-width: 2px;
-    stroke: var(--text-color);
-  }
-
-  .counter-viewport {
-    width: 8em;
-    height: 4em;
-    overflow: hidden;
-    text-align: center;
-    position: relative;
-  }
-
-  .counter-viewport strong {
-    position: absolute;
-    display: flex;
-    width: 100%;
-    height: 100%;
-    font-weight: 400;
-    color: var(--accent-color);
-    font-size: 4rem;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .counter-digits {
-    position: absolute;
-    width: 100%;
-    height: 100%;
+  .counter-wrapper {
+    border: 2px solid black;
   }
 </style>
