@@ -11,6 +11,7 @@
   const DECREMENT = -1;
 
   function modifyCount(modifier) {
+    // once a backend is implemented then we could add a auto save feature possibly...
     console.log(`${currentCountKey} has been modified`);
 
     if (modifier == DECREMENT && count == 0) return;
@@ -78,6 +79,7 @@
     gap: 20px;
     padding: 10px;
     align-items: center;
+    background: white;
   }
 
   .count-modifyer-button {
