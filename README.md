@@ -1,13 +1,5 @@
-# Cheese on Wheels
-A simple mobile game where your car passenger can keep score when playing cheese on wheels on the road.
-
-# How to play?
-1. When you see a yellow car shout: "Cheese on Wheels!".
-
-2. Then you get a point.
-
-3. Repeat steps 1 & 2 until the journey is over or you get bored.
-
+# Scorekeeper
+A simple app to help keep score of all the games you play.
 
 # SvelteKit Commands
 
