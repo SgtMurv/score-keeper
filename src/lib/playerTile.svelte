@@ -28,6 +28,9 @@
         count = +currentCountFromLocalStorage;
         fetchingScore = false;
       }, 500);
+    } else {
+      // there is no score stored in local storage.
+      fetchingScore = false;
     }
   });
 </script>
