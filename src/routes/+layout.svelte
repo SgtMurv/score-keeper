@@ -1,5 +1,4 @@
 <script>
-  import '../app.css';
 </script>
 
 <main>
@@ -7,6 +6,7 @@
 </main>
 
 <style>
+  @import './app.css';
   main {
     flex: 1;
     display: flex;

@@ -1,5 +1,5 @@
 <script>
-  import PlayerTile from '../lib/playerTile.svelte';
+  import PlayerTile from '$lib/playerTile.svelte';
 
   let players = [
     { name: 'Player 1', id: 0 },
@@ -7,7 +7,23 @@
   ];
 
   function resetScores() {
+    console.log('in resetScores');
+
     // go through the localstorage and get all the entries that start with current-count-
+    let allScoresRemoved = false;
+    let iterator = 0;
+    while (allScoresRemoved == false) {
+      let savedPlayerScore = localStorage.getItem(`current-count-${iterator}`);
+
+      console.log(`checking for : current-count-${iterator}`);
+
+      if (savedPlayerScore == null) {
+        allScoresRemoved = true;
+      } else {
+        localStorage.setItem(`current-count-${iterator}`, '');
+      }
+      iterator++;
+    }
   }
 </script>
 

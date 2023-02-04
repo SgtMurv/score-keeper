@@ -1,5 +1,6 @@
 <script>
   import { onMount } from 'svelte';
+  import { scores } from '../scoresStore.js';
 
   export let playerName = '';
   export let playerId = 0;
@@ -21,6 +22,14 @@
   }
 
   onMount(() => {
+    $scores = [
+      ...$scores,
+      {
+        playerId: playerId,
+        count: 0,
+      },
+    ];
+
     let currentCountFromLocalStorage = localStorage.getItem(currentCountKey);
 
     if (currentCountFromLocalStorage) {
