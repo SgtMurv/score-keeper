@@ -44,7 +44,7 @@
   });
 </script>
 
-<div>
+<div class="player-tile">
   <div class="player-name-label">
     <p>{playerName}</p>
   </div>
@@ -70,6 +70,10 @@
 </div>
 
 <style>
+  .player-tile {
+    margin-bottom: 5%;
+  }
+
   .player-name-label {
     font-weight: 600;
     font-size: 28px;

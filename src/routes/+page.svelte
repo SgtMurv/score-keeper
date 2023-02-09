@@ -28,7 +28,15 @@
 </script>
 
 <div class="home-wrapper">
-  <h1>Score keeper</h1>
+  <h1
+    style="    font-size: 5em;
+  margin: 20px 0px;
+  padding-bottom: 10px;
+  background: #ffeba366;
+  font-family: Pacifico, cursive;"
+  >
+    Score keeper
+  </h1>
   <div class="playerTiles">
     {#each players as player}
       <PlayerTile playerName={player.name} playerId={player.id} />
@@ -71,7 +79,6 @@
     height: 100%;
     display: flex;
     justify-content: start;
-    gap: 5%;
     flex-direction: column;
   }
 </style>
